@@ -15,7 +15,7 @@
          */
         $scope.doLogin = function () {
             vm.authenticating = true;
-            AuthService.doLogin($scope.loginData).save().$promise
+            AuthService.doLogin($scope.loginData).$promise
                 .then(function (result) {
                     AuthService.setUser(result);
                     AccountService.getClients().get().$promise

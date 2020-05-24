@@ -53,7 +53,7 @@
 
         //Resource for REST APIs
         this.doLogin = function(data) {
-            return $resource(BASE_URL+'/self/authentication', data);
+            return $resource(BASE_URL+'/self/authentication').save(data);
         }
 
         this.logout = function() {
