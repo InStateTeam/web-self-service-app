@@ -18,7 +18,7 @@ on:
 jobs:
   build-and-push:
     name: Build image and push to Github Packages
-    runs-on: ubuntu-latest
+    runs-on: driebit/node-gulp
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
