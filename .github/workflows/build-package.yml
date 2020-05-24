@@ -18,7 +18,7 @@ on:
 jobs:
   build-and-push:
     name: Build image and push to Github Packages
-    runs-on: shito/alpine-node-gulp
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -32,10 +32,10 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Get npm dependencies
-        run: npm install
-      - name: Build with gulp
-        run: gulp build
+      # - name: Get npm dependencies
+      #   run: npm install
+      # - name: Build with gulp
+      #   run: gulp build
       - name: Build Docker image and push
         uses: docker/build-push-action@v1
         with:
